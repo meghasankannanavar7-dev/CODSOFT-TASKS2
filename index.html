@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz Master - a colorful timed computer science quiz">
+    <title>Quiz Master | Timed Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section id="home-screen" class="screen home-screen">
+            <nav class="top-nav" aria-label="Main navigation">
+                <a class="brand" href="#home-screen"><span class="brand-mark">?</span> QUIZ MASTER</a>
+                <span class="nav-caption">KNOWLEDGE / CHALLENGE / GROW</span>
+            </nav>
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="eyebrow-dot"></span> THE DAILY BRAIN BOOST</p>
+                    <h1>Test your<br><em>knowledge.</em></h1>
+                    <p class="hero-text">Challenge yourself with our timed quiz. Ten questions, one sharp mind, and a fresh score waiting at the finish line.</p>
+                    <button id="start-button" class="primary-button" type="button"><span>START QUIZ</span><span class="button-arrow">&rarr;</span></button>
+                </div>
+                <div class="hero-art" aria-label="Quiz statistics">
+                    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+                    <div class="hero-badge">READY<br><strong>?</strong></div>
+                    <div class="stat-pill stat-top"><strong>10</strong><span>QUESTIONS</span></div>
+                    <div class="stat-pill stat-right"><strong>15s</strong><span>PER QUESTION</span></div>
+                    <div class="stat-pill stat-bottom"><strong>100%</strong><span>INSTANT RESULTS</span></div>
+                </div>
+            </div>
+            <div class="home-footer"><span>QUIZ MASTER / 2026</span><span>BUILT FOR CURIOUS MINDS</span></div>
+        </section>
+
+        <section id="quiz-screen" class="screen quiz-screen hidden" aria-live="polite">
+            <header class="quiz-header">
+                <a class="brand" href="#home-screen"><span class="brand-mark">?</span> QUIZ MASTER</a>
+                <div class="question-count"><span id="question-number">QUESTION 1</span><strong id="question-total">/ 10</strong></div>
+            </header>
+            <div class="quiz-layout">
+                <aside class="quiz-sidebar">
+                    <p class="eyebrow">CURRENT STREAK</p>
+                    <div class="streak-number" id="streak-number">00</div>
+                    <p class="sidebar-note">Stay focused.<br>Speed meets accuracy.</p>
+                    <div class="sidebar-line"></div>
+                    <p class="sidebar-label">PROGRESS</p>
+                    <div class="progress-label"><span id="progress-text">Question 1 of 10</span><strong id="progress-percent">10%</strong></div>
+                    <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+                </aside>
+                <div class="question-area">
+                    <div class="timer-card" id="timer-card"><span class="timer-icon">◷</span><div><span class="timer-label">TIME LEFT</span><strong id="timer">15</strong></div><span class="timer-unit">SEC</span></div>
+                    <div class="question-card">
+                        <p class="question-kicker" id="question-kicker">QUESTION 01</p>
+                        <h2 id="question-text">Loading your challenge...</h2>
+                        <div id="options" class="options" role="radiogroup" aria-label="Answer choices"></div>
+                        <div class="question-actions"><p id="feedback" class="feedback" role="status"></p><button id="submit-button" class="primary-button" type="button" disabled><span>SUBMIT ANSWER</span><span class="button-arrow">&rarr;</span></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="result-screen" class="screen result-screen hidden" aria-live="polite">
+            <header class="quiz-header"><a class="brand" href="#home-screen"><span class="brand-mark">?</span> QUIZ MASTER</a><span class="result-tag">FINAL SCORE</span></header>
+            <div class="result-hero"><p class="eyebrow"><span class="eyebrow-dot"></span> SESSION COMPLETE</p><h1>Quiz <em>completed.</em></h1><div class="score-block"><span>YOUR SCORE</span><strong id="score-value">0 / 10</strong><b id="percentage-value">0%</b></div><div id="stat-grid" class="result-stats"></div></div>
+            <div class="summary-wrap"><div class="summary-heading"><div><p class="eyebrow">THE FULL BREAKDOWN</p><h2>Answer summary</h2></div><div class="result-actions"><button id="restart-button" class="primary-button" type="button"><span>RESTART QUIZ</span><span class="button-arrow">↻</span></button><button id="home-button" class="text-button" type="button">GO HOME &rarr;</button></div></div><div id="summary-list" class="summary-list"></div></div>
+        </section>
+        <div id="error-message" class="toast hidden" role="alert"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
